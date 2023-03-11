@@ -8,7 +8,7 @@ User=root
 Group=root
 Type=simple
 WorkingDirectory=/home/cloudnet
-ExecStart=/home/cloudnet/start.sh
+ExecStart=/home/cloudnet/vanillachan6571-start.sh
 Restart=always
 RestartSec=30
 
