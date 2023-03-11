@@ -1,0 +1,14 @@
+[Unit]
+Description=CloudNet Service - Auto Install by VanillaChan#6571
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+Type=simple
+WorkingDirectory=/home/cloudnet
+ExecStart=/home/cloudnet/start.sh
+
+[Install]
+WantedBy=multi-user.target
