@@ -25,7 +25,7 @@ echo "==========================================================================
 echo "CloudNet Install Script"
 echo
 echo "By Neko Network & NekoHosting"
-echo "https://github.com/"
+echo "https://github.com/VanillaChan6571"
 echo
 echo "This will do the following:"
 echo "1. Make Directories"
@@ -42,10 +42,10 @@ echo "==========================================================================
 
 while true; do
 
-read -p "Do you want to proceed? (y/N) " yn
+read -p "Do wish to continue with the install? (y/N) " yn
 
 case $yn in
-	[yY] ) echo Continuing with the install;
+	[yY] ) echo User Authorized the Install...;
 		break;;
 	[nN] ) echo Exiting...;
 		exit;;
