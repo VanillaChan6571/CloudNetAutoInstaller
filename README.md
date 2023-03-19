@@ -18,7 +18,7 @@
 *   [Download Versions](#Download-Version-History)
 
 ## Introduction
-First of thank you so much for purchasing MultiEgg Premium! Hope you enjoy this EGG addon. 
+First of thank you so much for using my auto installer! Hope you enjoy! 
 This is a most simple install without needing to do anything. Just run the bash command into your terminal.
 You may look at the code, but its very simple code that doesn't really harm you as its basically running as a macro.
 
