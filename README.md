@@ -33,6 +33,7 @@ bash <(curl -s https://github.com/VanillaChan6571/CloudNetAutoInstaller/blob/mai
 All Download Verions
 | Cloudnet Version | Base Version | Download | Unix Bash Code |
 | --- | --- | -------------------- | -------------------- |
-| 4.0.0-RC8 | 1.0 | **[Current Version - 1.0](https://cdn.mcneko.net/CloudNetAutoInstaller/CloudNet-1.0-Installer.sh)** | bash <(curl -s https://cdn.mcneko.net/CloudNetAutoInstaller/CloudNet-1.0-Installer.sh) |
+| 4.0.0-RC8 | 1.1 | **[Current Version - 1.1](https://cdn.mcneko.net/CloudNetAutoInstaller/CloudNet-1.1-Installer.sh)** | bash <(curl -s https://cdn.mcneko.net/CloudNetAutoInstaller/CloudNet-1.1-Installer.sh) |
+| 4.0.0-RC8 | 1.0 | **[1.0](https://cdn.mcneko.net/CloudNetAutoInstaller/CloudNet-1.0-Installer.sh)** | bash <(curl -s https://cdn.mcneko.net/CloudNetAutoInstaller/CloudNet-1.0-Installer.sh) |
 
 <p>These Download Version History will be saved in my public file archives.</p>
