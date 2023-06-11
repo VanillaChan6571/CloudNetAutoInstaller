@@ -22,7 +22,7 @@ warning() {
 }
 
 echo "============================================================================"
-echo "CloudNet Install Script"
+echo "CloudNet Install Script v1.1"
 echo
 echo "By Neko Network & NekoHosting"
 echo "https://github.com/VanillaChan6571"
@@ -34,6 +34,7 @@ echo "3. Unzip Files"
 echo "4. Auto Systemd CloudNet"
 echo
 warning "Please make sure you run this as root!!!"
+warning "If not you may need enter a password for sudo."
 echo 
 echo "============================================================================"
 
@@ -45,7 +46,7 @@ while true; do
 read -p "Do wish to continue with the install? (y/N) " yn
 
 case $yn in
-	[yY] ) echo User Authorized the Install...;
+	[yY] ) echo User Authorized Installation... Resuming...;
 		break;;
 	[nN] ) echo Exiting...;
 		exit;;
@@ -55,52 +56,45 @@ esac
 done
 
 success "Making Directory -> /home/cloudnet/"
-mkdir /home/cloudnet/
+sudo mkdir /home/cloudnet/
 
 cd /home/cloudnet/
 
-success "Attempting to Download Java 17"
-warning "You will be prompted to install them! Press Y or N"
-apt-get install openjdk-17-jdk openjdk-17-jre
-
-success "Installing unzip"
-apt-get install unzip
-
-success "Installing wget"
-apt-get install wget
+success "Attempting to Download Required Files: Java 17, Unzip and WGET"
+sudo apt-get install openjdk-17-jdk openjdk-17-jre -y && sudo apt-get install unzip -y && sudo apt-get install wget -y
 
 success "Downloading Files..."
 cd /home/cloudnet/
 
-wget https://github.com/CloudNetService/CloudNet-v3/releases/download/4.0.0-RC8/CloudNet.zip
+sudo wget https://github.com/CloudNetService/CloudNet-v3/releases/download/4.0.0-RC8/CloudNet.zip
 
 cd /home/cloudnet/
 
 success "Unziping Files..."
-unzip CloudNet.zip
+sudo unzip CloudNet.zip
 
 success "Making Systemd Creation..."
-curl -so /etc/systemd/system/cloudnet.service https://raw.githubusercontent.com/VanillaChan6571/CloudNetAutoInstaller/main/cloudnet.service
-curl -so /home/cloudnet/vanillachan6571-start.sh https://raw.githubusercontent.com/VanillaChan6571/CloudNetAutoInstaller/main/vanillachan6571-start.sh
+sudo curl -so /etc/systemd/system/cloudnet.service https://raw.githubusercontent.com/VanillaChan6571/CloudNetAutoInstaller/main/cloudnet.service
+sudo curl -so /home/cloudnet/vanillachan6571-start.sh https://raw.githubusercontent.com/VanillaChan6571/CloudNetAutoInstaller/main/vanillachan6571-start.sh
 
-systemctl stop cloudnet.service # this is here if you decided to re-launch the script!
+sudo systemctl stop cloudnet.service # this is here if you decided to re-launch the script!
 
 warning "Reloading Daemon!!"
-systemctl daemon-reload # this is needed if some changes were made to cloudnet.service
+sudo systemctl daemon-reload # this is needed if some changes were made to cloudnet.service
 
 success "Giving Permissions..."
-chmod 644 /etc/systemd/system/cloudnet.service
-chmod +x /home/cloudnet/vanillachan6571-start.sh
+sudo chmod 644 /etc/systemd/system/cloudnet.service
+sudo chmod +x /home/cloudnet/vanillachan6571-start.sh
 
 success "Enabling Systemd..."
-systemctl start cloudnet.service
-systemctl enable cloudnet.service
+sudo systemctl start cloudnet.service
+sudo systemctl enable cloudnet.service
 
 
 success "removing CloudNet.zip..."
 cd /home/cloudnet/
 
-rm CloudNet.zip
+sudo rm CloudNet.zip
 
 success "Installation Complete"
 echo "You should now be able to run the following:"
