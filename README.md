@@ -7,7 +7,7 @@
 
 <p align="center">
  <b>
-      The CloudNet Auto Installer by VanillaChan#6571
+      The CloudNet Auto Installer by vanillachan formarly known as VanillaChan#6571
     </b>
 </p>
 
